@@ -78,16 +78,13 @@ export class AppService {
     }
     const sortArray = Object.entries(countObj).sort(([, a], [, b]) => +b - +a);
     const mostThreeStation = []; // 2단계
-    for (let i = 0; i < 2; i++) {
+    for (let i = 0; i < 3; i++) {
       mostThreeStation.push(sortArray[i][0]);
     }
     const answer = []; // 3단계
     for (const InfoByRoute of arrInfoByRouteList) {
       for (const station of mostThreeStation) {
         if (InfoByRoute.arsId === station) {
-          if (InfoByRoute.traTime2 === '0') {
-            InfoByRoute.traTime2 = '99999999';
-          }
           answer.push({
             버스번호: InfoByRoute.rtNm,
             번호판: InfoByRoute.plainNo1,
