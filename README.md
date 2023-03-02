@@ -12,8 +12,6 @@ $ npm install
 
 ```bash
 
-**루트(/)로 실행하면 됩니다.(http://localhost:3000/)**
-
 # development
 $ npm run start
 
